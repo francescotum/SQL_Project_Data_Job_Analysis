@@ -41,6 +41,6 @@ FROM skills_top_job
 GROUP BY
     skills
 ORDER BY
-    skill_demand DESC
+    skill_demand DESC;
 
 
