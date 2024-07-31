@@ -1,7 +1,7 @@
 /*
-Question: What are the most in-demand skills foa a data analyst?
-- Identify the top 5 in-demand skills for a data analyst.
-- Focus on all job postings (not only the remote ones).
+Question: What are the most in-demand skills for a Data Scientist?
+- Identify the top 5 in-demand skills for a Data Scientist.
+- Focus on remote job postings.
 - Why? To have insights about the most valuable skills for job seekers.
 */
 
@@ -14,9 +14,10 @@ FROM
 INNER JOIN skills_job_dim ON job_postings_fact.job_id = skills_job_dim.job_id
 INNER JOIN skills_dim ON skills_job_dim.skill_id = skills_dim.skill_id
 WHERE
-    job_title_short = 'Data Analyst'
+    job_title_short = 'Data Scientist'
 GROUP BY 
     skills
 ORDER BY
     demand_count DESC
 LIMIT 5;
+

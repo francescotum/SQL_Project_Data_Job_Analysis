@@ -1,9 +1,9 @@
 /*
 Question: What are the most optimal skills to learn? (Trade-off high demand high salary)
-- Identify skills that have high demand and high salaries for Data Analyst roles.
+- Identify skills that have high demand and high salaries for Data Scientist roles.
 - Focus on remote positions with sepcified salaries.
 - Why? Trargeting skills that offer job security (high demand) and financial benefits (high salary)
-    offers strategic insights for career development in data analysis.
+    offers strategic insights for career development in Data Science.
 */
 
 WITH skills_demand AS (
@@ -15,7 +15,7 @@ WITH skills_demand AS (
     INNER JOIN skills_job_dim ON job_postings_fact.job_id = skills_job_dim.job_id
     INNER JOIN skills_dim ON skills_job_dim.skill_id = skills_dim.skill_id
     WHERE
-        job_title_short = 'Data Analyst'
+        job_title_short = 'Data Scientist'
         AND salary_year_avg IS NOT NULL
         AND job_work_from_home = TRUE
     GROUP BY
@@ -28,7 +28,7 @@ WITH skills_demand AS (
     INNER JOIN skills_job_dim ON job_postings_fact.job_id = skills_job_dim.job_id
     INNER JOIN skills_dim ON skills_job_dim.skill_id = skills_dim.skill_id
     WHERE
-        job_title_short = 'Data Analyst'
+        job_title_short = 'Data Scientist'
         AND salary_year_avg IS NOT NULL
         AND job_work_from_home = TRUE
     GROUP BY
