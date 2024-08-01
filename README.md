@@ -110,6 +110,7 @@ This allows to state that **Python** and **SQL** are very important (as expected
 *Bar chart showing the count of skills appearing in the top 10 paying jobs.*
 
 ### 3. Top Demanded Skills for Data Scientists
+The next step is to understand which are the most requested skills for Data Scientists: in other words, which skills appear more often on job postings.
 
 ```sql
 SELECT 
@@ -127,6 +128,9 @@ ORDER BY
     demand_count DESC
 LIMIT 5;
 ```
+
+The results for all Data Scientist jobs and for the fully remote ones show that **Python**, **SQL**, and **R** are the most sought-after skills. The key difference is the inclusion of **AWS** in the remote jobs list, indicating the importance of cloud computing skills for remote data science positions. Finally, data visulization tools like **Tableu** remain essential.
+
 | Skills   | Demand Count |
 |----------|--------------|
 | Python   | 114016       |
@@ -134,8 +138,19 @@ LIMIT 5;
 | R        | 59754        |
 | SAS      | 29642        |
 | Tableau  | 29513        |
+*Top demanded skills for Data Scientists*
+
+| Skills   | Demand Count |
+|----------|--------------|
+| Python   | 10390        |
+| SQL      | 7488         |
+| R        | 4674         |
+| AWS      | 2593         |
+| Tableau  | 2458         |
+*Top demanded skills for Data Scientists among those jobs allowing to work from anywhere.*
 
 ### 4. Top Paying Skills
+Another useful insight is the average salary associeted to each skill.
 
 ```sql
 SELECT 
@@ -155,6 +170,19 @@ ORDER BY
     avg_salary DESC
 LIMIT 25;
 ```
+Breaking down the results:
+
+**1. GDPR** 
+
+High demand and premium salaries for those job seakers that understand the importance of data privacy and compliance.
+
+**2.Diverse Technical Skills**
+
+ The presence of Golang, Selenium, OpenCV, Neo4j, and DynamoDB indicates that a variety of technical and programming skills command high salaries, spanning areas such as programming languages, automation, computer vision, graph databases, and cloud data management.
+
+**3. Specialized Tools**
+
+Skills in specific tools and frameworks like Atlassian, MicroStrategy, and Tidyverse are highly valued, emphasizing the importance of proficiency in specialized software for data analysis, project management, and data visualization.
 
 | Skills       | Avg Salary ($) |
 |--------------|------------|
@@ -170,6 +198,7 @@ LIMIT 25;
 | Tidyverse    | 165513     |
 
 ### 5. Optimal Skills to Learn
+Now that I have the most demanded and the most remunerated skills, I want to understand which skills fall in a sort of trade-off between demand and remuneration.
 
 ```sql
 WITH skills_demand AS (
@@ -229,7 +258,50 @@ LIMIT 25
 | GCP         | 59           | 155811     |
 | Snowflake   | 72           | 152687     |
 | PyTorch     | 115          | 152603     |
+*Most optimal skills for Data Scientists in 2023*
 
+These results say that:
+
+**1.High Salaries in Programming and Data Tools**
+
+ Skills in programming languages (C, Go) and data visualization tools (Qlik) command some of the highest average salaries, each exceeding $164,000, indicating their significant value in the data science job market.
+**2. Cloud and Big Data Expertise**
+
+ Tools and platforms such as Airflow, BigQuery, GCP, and Snowflake are in demand, reflecting the importance of cloud computing and big data management in modern data science roles.
+
+**3. Machine Learning and Data Visualization**
+
+ Skills in PyTorch and Looker highlight the need for machine learning expertise and data visualization capabilities, crucial for deriving insights and building predictive models.
 
 # What I learned
+This project made me improve my SQL skills while at the same time helping me in getting info about jobs in the Data Science world. 
+
+- I got more comfortable with complex queries using CTEs and sub-queries.
+- I managed to apply correctly the aggregation functions and GROUP BY statements. 
+
 # Conclusions
+The analysis made emerge several key aspects regarding the job market for Data Scientists, particularly:
+
+### Insights
+**1. Exceptional Salaries for Senior Data Scientist Roles**
+
+Senior and specialized positions, such as Staff Data Scientist/Quant Researcher and Business Analytics roles, command exceptionally high salaries, with figures reaching up to $550,000. This highlights the premium placed on advanced expertise and experience in the data science field.
+
+**2. High Value on Leadership in Data Science**
+
+Leadership roles, including Head of Data Science and Director-level positions, offer substantial compensation, with salaries ranging from $313,000 to $351,500. This underscores the importance of strategic direction and leadership within data science teams.
+
+**3. Widespread Industry Demand**
+
+High-paying data science jobs span across various sectors, including financial services, retail, and technology. This demonstrates the extensive demand for data science expertise across different industries, showcasing the versatility and critical importance of data science skills.
+
+**4. Key Skills for Top-Paying Jobs**
+
+Python and SQL are essential skills for top-paying data science jobs. Additionally, proficiency in deep learning libraries is increasingly sought after, reflecting the growing emphasis on advanced machine learning techniques.
+
+**5. Optimal Skills Balancing Demand and Remuneration**
+
+Skills in programming languages (C, Go), data visualization tools (Qlik), cloud platforms (Airflow, BigQuery, GCP, Snowflake), and machine learning frameworks (PyTorch) are highly valued. These skills offer a balance between high demand and competitive salaries, indicating their critical role in the data science job market.
+
+### Closing Thoughts
+To conclude, now I am more aware about the required competences I should develop in order to advance in my Data Science career. These findings helped my in understanding what I should prioritize and moreover they confirmed the fact that this journey is all about continuous learning: this is a fast-paced sector and you need to adapt in order to get the best opportunities.
